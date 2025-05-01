@@ -26,7 +26,8 @@
 //     return false
 // };
 
-// Suboptimal 
+
+// efficient
 
 // var searchMatrix = function(matrix, target) {
 
@@ -40,9 +41,16 @@
 //         if (matrix[mid][lastIndex] < target) {
 //             start = mid + 1
 //         } else if (matrix[mid][lastIndex] >= target && matrix[mid][0] <= target) {
-            
-//             for (let i = 0; i <= lastIndex; i++) {
-//                 if (matrix[mid][i] === target) {
+//             const row = matrix[mid]
+//             let start = 0;
+//             let end = lastIndex - 1;
+//             while (start <= end) {
+//                 const mid = Math.floor((start + end) / 2);
+//                 if (row[mid] < target) {
+//                     start = mid + 1
+//                 } else if (row[mid] > target) {
+//                     end = mid - 1
+//                 } else {
 //                     return true
 //                 }
                 
@@ -56,3 +64,4 @@
 //     }
 //     return false
 // };
+
