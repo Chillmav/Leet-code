@@ -3,7 +3,6 @@ class SlidingWindow {
         int profit = 0;
         int l = 0;
         int r = 1;
-
         while (r < prices.length) {
             profit = Math.max(prices[r] - prices[l], profit);
             if (prices[l] >= prices[r]) {
